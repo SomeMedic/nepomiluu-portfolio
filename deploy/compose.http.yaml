@@ -1,0 +1,8 @@
+# Bootstrap only: serves HTTP while a certificate is being issued externally.
+# CMS cookies remain Secure, so log in only after enabling HTTPS.
+services:
+  nginx:
+    ports: !override
+      - "${HTTP_BIND:-127.0.0.1}:${HTTP_PORT:-8080}:80"
+    volumes: !override
+      - ./deploy/nginx/http.conf.template:/etc/nginx/templates/default.conf.template:ro

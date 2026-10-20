@@ -1,0 +1,2 @@
+import { defineConfig } from 'tsup';
+export default defineConfig({ entry: ['src/main.ts', 'src/cli.ts'], format: ['esm'], target: 'node24', clean: true, sourcemap: true, noExternal: [/^@portfolio\/contracts(?:\/.*)?$/], external: ['@nestjs/common', '@nestjs/core', '@nestjs/platform-express', 'mongoose', 'sharp', 'argon2', 'cookie-parser'], esbuildOptions(options) { options.banner = { js: "import { createRequire } from 'node:module'; const require = createRequire(import.meta.url);" }; } });

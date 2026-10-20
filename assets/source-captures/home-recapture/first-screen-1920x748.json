@@ -1,0 +1,38 @@
+{
+  "sourceUrl": "https://fomin-clinic.ru/",
+  "finalUrl": "https://fomin-clinic.ru/",
+  "capturedAt": "2026-10-19T19:51:18.293Z",
+  "title": "Клиника Фомина в Москве — сеть клиник доказательной медицины. Официальный сайт",
+  "httpStatus": 200,
+  "deviceScaleFactor": 1,
+  "locale": "ru-RU",
+  "actions": [
+    "Closed the official entrance notice with its close button",
+    "Confirmed Moscow with the official city selection button",
+    "Closed the pink promotion bar using its official close control",
+    "Dismissed cookie notice with its official button"
+  ],
+  "scrollY": 0,
+  "readyState": "complete",
+  "fonts": "loaded",
+  "viewport": {
+    "width": 1920,
+    "height": 748
+  },
+  "heading": {
+    "text": "Сеть клиник женского здоровья и ЭКО в Москве",
+    "x": 60,
+    "y": 501.515625,
+    "width": 604,
+    "height": 179.484375,
+    "bottom": 681,
+    "fullyVisible": true,
+    "opacity": "1",
+    "visibility": "visible"
+  },
+  "image": {
+    "loaded": true,
+    "source": "https://fomin-clinic.ru/upload/resize_cache/sprint.editor/a1b/8syjbwy6pcey4v8zgcsd8rgz722xazmp/1800_830_1/img_1747645205_6333_634_2600_3800_px.webp"
+  },
+  "visibleModal": false
+}

@@ -1,0 +1,24 @@
+{
+  "name": "nepomiluu-portfolio",
+  "private": true,
+  "packageManager": "pnpm@10.20.0",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "node scripts/dev.mjs web",
+    "dev:api": "node scripts/dev.mjs api",
+    "build": "pnpm --filter @portfolio/contracts build && pnpm --filter @portfolio/api build && pnpm --filter @portfolio/web build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint apps packages --max-warnings 0",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "admin:create": "node scripts/cli.mjs admin:create",
+    "admin:reset": "node scripts/cli.mjs admin:reset",
+    "seed": "node scripts/cli.mjs seed"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.1", "eslint": "9.39.1", "typescript-eslint": "8.46.2",
+    "typescript": "5.9.3", "vitest": "3.2.4", "@playwright/test": "1.56.1",
+    "@types/node": "24.10.0", "tsx": "4.20.6"
+  }
+}

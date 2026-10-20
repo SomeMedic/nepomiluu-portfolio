@@ -1,0 +1,4 @@
+# Local production smoke only: all traffic stays inside the Docker network.
+services:
+  nginx:
+    ports: !override []

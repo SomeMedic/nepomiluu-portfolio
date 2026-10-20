@@ -1,0 +1,128 @@
+{
+  "provenance": "User-provided project presentation boards, received in the project design folders on 2026-10-20. These are supplied presentation compositions, not newly captured screenshots of live websites.",
+  "conversion": {
+    "tool": "sharp",
+    "version": "0.34.5",
+    "webp": {
+      "quality": 94,
+      "effort": 6,
+      "smartSubsample": true
+    },
+    "geometry": "Full original frame, unchanged dimensions; no crop or rescale.",
+    "colour": "Original sRGB colour space; no grading, retouching, compositing or explicit colour adjustment. WebP encoding is lossy."
+  },
+  "files": [
+    {
+      "mediaId": "builtin:clypse-cover",
+      "source": "design/clypse-portfolio/01-cover.png",
+      "output": "apps/web/public/assets/clypse-cover.webp",
+      "width": 1586,
+      "height": 992,
+      "colourSpace": "srgb",
+      "sourceBytes": 1585056,
+      "outputBytes": 141546,
+      "sourceSha256": "9dcc7c768a888bd5ffd6936644bf0e4033701aeb76161b0b33e92d941972741d",
+      "outputSha256": "b573a172d00391b2d238f9096b2f6441fbadff24654305fd8f01305c1e538d06",
+      "sourceFormat": "png",
+      "outputFormat": "webp"
+    },
+    {
+      "mediaId": "builtin:clypse-forms",
+      "source": "design/clypse-portfolio/02-forms.png",
+      "output": "apps/web/public/assets/clypse-forms.webp",
+      "width": 1586,
+      "height": 992,
+      "colourSpace": "srgb",
+      "sourceBytes": 1563933,
+      "outputBytes": 139964,
+      "sourceSha256": "a528e693c5e4b33a93518208359ffd6681a037c4415716e2a95867e19f6f8c0b",
+      "outputSha256": "6dc012fda9b79e38e35caea7c9c27299b99988837d2f6230e0837f87832a1791",
+      "sourceFormat": "png",
+      "outputFormat": "webp"
+    },
+    {
+      "mediaId": "builtin:clypse-documents",
+      "source": "design/clypse-portfolio/03-documents.png",
+      "output": "apps/web/public/assets/clypse-documents.webp",
+      "width": 1586,
+      "height": 992,
+      "colourSpace": "srgb",
+      "sourceBytes": 1889094,
+      "outputBytes": 213884,
+      "sourceSha256": "35265e7751481873da1d84b92af4f94c131c6bc905177f42cbb3e89f0c9243fc",
+      "outputSha256": "cb8b0f65dbf1c2bd1068348bb6e4005a6d24cc23c97bf9a4cb37d3004fc5c31c",
+      "sourceFormat": "png",
+      "outputFormat": "webp"
+    },
+    {
+      "mediaId": "builtin:clypse-design-language",
+      "source": "design/clypse-portfolio/04-design-language.png",
+      "output": "apps/web/public/assets/clypse-design-language.webp",
+      "width": 1586,
+      "height": 992,
+      "colourSpace": "srgb",
+      "sourceBytes": 1586782,
+      "outputBytes": 169616,
+      "sourceSha256": "0f212347e4cfabe1c4d632c545e45b866d683672cf8d2b2245384253cdfc3d5d",
+      "outputSha256": "8d980280efe9e9e940df28f20d2a492d7144548e9b24d141cef9068e90aeb2e9",
+      "sourceFormat": "png",
+      "outputFormat": "webp"
+    },
+    {
+      "mediaId": "builtin:fomina-cover",
+      "source": "design/fomin-clinic-portolio/01-cover.png",
+      "output": "apps/web/public/assets/fomina-cover.webp",
+      "width": 1586,
+      "height": 992,
+      "colourSpace": "srgb",
+      "sourceBytes": 1420321,
+      "outputBytes": 116424,
+      "sourceSha256": "b5bce256800df0360d3f3ba976523b4eeae10f020b4de4f180621673fc76a57e",
+      "outputSha256": "ddb5b13c8c304c1c0c875d0940c3d214d00c927d3d92d536e5b6d7c6d49f2c6e",
+      "sourceFormat": "png",
+      "outputFormat": "webp"
+    },
+    {
+      "mediaId": "builtin:fomina-doctors-board",
+      "source": "design/fomin-clinic-portolio/02-doctors.png",
+      "output": "apps/web/public/assets/fomina-doctors-board.webp",
+      "width": 1586,
+      "height": 992,
+      "colourSpace": "srgb",
+      "sourceBytes": 1504451,
+      "outputBytes": 159238,
+      "sourceSha256": "598faae4a85bb93f3493ad33dc75e83fd75cd53578d442a5bd441d8e0310f894",
+      "outputSha256": "a6ff83e20a54e76a90ee127375a91c40879efe60a968f0b10cf7e31d50dbd571",
+      "sourceFormat": "png",
+      "outputFormat": "webp"
+    },
+    {
+      "mediaId": "builtin:fomina-specialist",
+      "source": "design/fomin-clinic-portolio/03-specialist.png",
+      "output": "apps/web/public/assets/fomina-specialist.webp",
+      "width": 1586,
+      "height": 992,
+      "colourSpace": "srgb",
+      "sourceBytes": 1541175,
+      "outputBytes": 149838,
+      "sourceSha256": "54c75bcfa61e358c3ebfdfdb32cd4d6452023de20b95970b45e1cb732b237c40",
+      "outputSha256": "185c34c2087fc5331c4bd2c6daa6b616bf05479236e3f66f3e26060d2a04e646",
+      "sourceFormat": "png",
+      "outputFormat": "webp"
+    },
+    {
+      "mediaId": "builtin:fomina-design-language",
+      "source": "design/fomin-clinic-portolio/04-design-language.png",
+      "output": "apps/web/public/assets/fomina-design-language.webp",
+      "width": 1586,
+      "height": 992,
+      "colourSpace": "srgb",
+      "sourceBytes": 1471574,
+      "outputBytes": 145780,
+      "sourceSha256": "c1431759d90181c58fa3eaf235d6586cd3cd3076e78efe06d0296cf9d3804609",
+      "outputSha256": "d8b4dc792a9708a98964e76aaf6eb283e6cf3cd73cf1efae0fd2a6512175a3d7",
+      "sourceFormat": "png",
+      "outputFormat": "webp"
+    }
+  ]
+}

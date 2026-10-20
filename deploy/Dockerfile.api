@@ -1,0 +1,39 @@
+# syntax=docker/dockerfile:1.7
+ARG NODE_IMAGE=node:24.22.0-bookworm-slim@sha256:a5f4366e834695d5f363b920c104953a535d3a9864d1bdf74566a0ebe01daee5
+FROM ${NODE_IMAGE} AS base
+WORKDIR /app
+ENV PNPM_HOME=/pnpm PATH=/pnpm:$PATH MONGOMS_DISABLE_POSTINSTALL=1
+RUN corepack enable && corepack prepare pnpm@10.20.0 --activate
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY apps/web/package.json apps/web/package.json
+COPY apps/api/package.json apps/api/package.json
+COPY packages/contracts/package.json packages/contracts/package.json
+
+FROM base AS dependencies
+RUN --mount=type=cache,id=portfolio-pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+
+FROM dependencies AS build
+COPY tsconfig.base.json ./
+COPY packages/contracts packages/contracts
+COPY apps/api apps/api
+RUN pnpm --filter @portfolio/contracts build && pnpm --filter @portfolio/api build
+
+# Legacy pnpm deploy explicitly turns frozenLockfile off. A separate frozen
+# production install preserves the committed dependency graph instead.
+FROM base AS production-dependencies
+RUN --mount=type=cache,id=portfolio-pnpm,target=/pnpm/store pnpm --filter @portfolio/api... install --prod --frozen-lockfile
+
+FROM ${NODE_IMAGE} AS runtime
+WORKDIR /app/apps/api
+ENV NODE_ENV=production API_HOST=0.0.0.0 API_PORT=4000 MEDIA_DIR=/data/media PUBLIC_ASSETS_DIR=/app/apps/web/public/assets
+COPY --from=production-dependencies --chown=node:node /app/node_modules /app/node_modules
+COPY --from=production-dependencies --chown=node:node /app/apps/api/node_modules ./node_modules
+COPY --from=production-dependencies --chown=node:node /app/packages/contracts /app/packages/contracts
+COPY --from=build --chown=node:node /app/apps/api/package.json ./package.json
+COPY --from=build --chown=node:node /app/apps/api/dist ./dist
+COPY --chown=node:node apps/web/public/assets /app/apps/web/public/assets
+COPY --chown=node:node scripts/container /opt/portfolio-ops
+RUN mkdir -p /data/media && chown node:node /data/media
+USER node
+EXPOSE 4000
+CMD ["node", "dist/main.js"]

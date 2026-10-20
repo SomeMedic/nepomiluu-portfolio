@@ -1,0 +1,60 @@
+{
+  "sourceUrl": "https://fomin-clinic.ru/",
+  "finalUrl": "https://fomin-clinic.ru/",
+  "capturedAt": "2026-10-19T19:51:18.293Z",
+  "title": "Клиника Фомина в Москве — сеть клиник доказательной медицины. Официальный сайт",
+  "httpStatus": 200,
+  "deviceScaleFactor": 1,
+  "locale": "ru-RU",
+  "actions": [
+    "Closed the official entrance notice with its close button",
+    "Confirmed Moscow with the official city selection button",
+    "Closed the pink promotion bar using its official close control",
+    "Dismissed cookie notice with its official button"
+  ],
+  "scrollY": 0,
+  "readyState": "complete",
+  "fonts": "loaded",
+  "viewport": {
+    "width": 1920,
+    "height": 748
+  },
+  "heading": {
+    "text": "Сеть клиник женского здоровья и ЭКО в Москве",
+    "x": 60,
+    "y": 501.515625,
+    "width": 604,
+    "height": 179.484375,
+    "bottom": 681,
+    "fullyVisible": true,
+    "opacity": "1",
+    "visibility": "visible"
+  },
+  "image": {
+    "loaded": true,
+    "source": "https://fomin-clinic.ru/upload/resize_cache/sprint.editor/a1b/8syjbwy6pcey4v8zgcsd8rgz722xazmp/1800_830_1/img_1747645205_6333_634_2600_3800_px.webp"
+  },
+  "visibleModal": false,
+  "sourceFile": "assets/source-captures/fomina-home.png",
+  "publicFile": "apps/web/public/assets/fomina-home.webp",
+  "captureMethod": "Google Chrome headless through Playwright; native screenshot, no DOM, text, image or style changes",
+  "stabilization": "Inspected the unchanged 1600x1050 composition at approximately 17, 23 and 35 seconds; document/fonts complete and no page errors. Selected screenshot taken after fonts and images loaded, official notices closed and responsive viewport settled.",
+  "selectionReason": "1920x748 matches the portfolio slot aspect ratio 1468x571. The original 1600x1050 image lost its low-positioned heading when cropped. A 1600x622 viewport also clipped the heading; 1920x748 shows it fully at scrollY 0.",
+  "imageConversion": {
+    "format": "WebP",
+    "quality": 92,
+    "resize": false,
+    "crop": false,
+    "width": 1920,
+    "height": 748
+  },
+  "sha256": {
+    "png": "acf2973b2e9cbbc34cff38c2986aff1ea0426d34c409a9df388c0637421f9d18",
+    "webp": "e463aadaa9d6225f3b00caf95d301c52db53b75966e21e1ac659389c284d4cad"
+  },
+  "comparisonFiles": [
+    "assets/source-captures/home-recapture/previous-home.png",
+    "assets/source-captures/home-recapture/first-screen-1600x622.png",
+    "assets/source-captures/home-recapture/content-screen.png"
+  ]
+}

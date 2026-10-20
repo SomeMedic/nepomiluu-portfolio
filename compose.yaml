@@ -1,0 +1,111 @@
+name: ${COMPOSE_PROJECT_NAME:-nepomiluu}
+x-logging: &logging
+  driver: json-file
+  options: { max-size: "10m", max-file: "3" }
+services:
+  mongo:
+    image: ${MONGO_IMAGE:-mongo:8.0.34@sha256:4a4ab5d4834207389e0d7270fac988e21ffedccecba77991a552f755df229907}
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME:?Set MONGO_ROOT_USERNAME in external env file}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:?Set MONGO_ROOT_PASSWORD in external env file}
+      MONGO_INITDB_DATABASE: ${MONGO_DB:-portfolio}
+    volumes:
+      - mongo-data:/data/db
+    networks: [database]
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --username \"$$MONGO_INITDB_ROOT_USERNAME\" --password \"$$MONGO_INITDB_ROOT_PASSWORD\" --authenticationDatabase admin --eval 'quit(db.adminCommand({ping:1}).ok ? 0 : 1)' > /dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    logging: *logging
+  api:
+    image: nepomiluu-api:${APP_VERSION:-local}
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.api
+      args: { NODE_IMAGE: "${NODE_IMAGE:-node:24.22.0-bookworm-slim@sha256:a5f4366e834695d5f363b920c104953a535d3a9864d1bdf74566a0ebe01daee5}" }
+    restart: unless-stopped
+    init: true
+    environment:
+      NODE_ENV: production
+      API_HOST: 0.0.0.0
+      API_PORT: 4000
+      MONGODB_URI: ${MONGODB_URI:?Set authenticated internal MONGODB_URI in external env file}
+      MEDIA_DIR: /data/media
+      PUBLIC_ASSETS_DIR: /app/apps/web/public/assets
+      INTERNAL_SECRET: ${INTERNAL_SECRET:?Set a random INTERNAL_SECRET of at least 32 characters}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Set HTTPS PUBLIC_ORIGIN}
+      WEB_INTERNAL_URL: http://web:3000
+    volumes:
+      - media-data:/data/media
+    expose: ["4000"]
+    networks: [database, application]
+    depends_on:
+      mongo: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4000/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    logging: *logging
+  web:
+    image: nepomiluu-web:${APP_VERSION:-local}
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+      args: { NODE_IMAGE: "${NODE_IMAGE:-node:24.22.0-bookworm-slim@sha256:a5f4366e834695d5f363b920c104953a535d3a9864d1bdf74566a0ebe01daee5}" }
+    restart: unless-stopped
+    init: true
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      API_INTERNAL_URL: http://api:4000
+      INTERNAL_SECRET: ${INTERNAL_SECRET:?Set INTERNAL_SECRET}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?Set HTTPS PUBLIC_ORIGIN}
+      ALLOW_STATIC_CONTENT: "false"
+    expose: ["3000"]
+    networks: [application]
+    depends_on:
+      api: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/ru').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 45s
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    logging: *logging
+  nginx:
+    image: ${NGINX_IMAGE:-nginx:1.30.6-alpine@sha256:970364228b1e4f932abc22d321932816782cca8a20b85a77552a7cfe9acfb3b5}
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN}
+      NGINX_ENVSUBST_FILTER: DOMAIN
+    ports:
+      - "${HTTP_BIND:-0.0.0.0}:${HTTP_PORT:-80}:80"
+      - "${HTTPS_BIND:-0.0.0.0}:${HTTPS_PORT:-443}:443"
+    volumes:
+      - ./deploy/nginx/https.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - ${TLS_CERT_DIR:-/etc/nepomiluu/tls}:/etc/nginx/tls:ro
+    networks: [application]
+    depends_on:
+      web: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/nginx-health"]
+      interval: 20s
+      timeout: 3s
+      retries: 5
+    logging: *logging
+networks:
+  database:
+    internal: true
+  application:
+volumes:
+  mongo-data:
+  media-data:

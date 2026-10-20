@@ -1,0 +1,8 @@
+# Use when the host Nginx already owns 80/443 and terminates HTTPS.
+# This port MUST remain loopback-only: the proxy trusts the host's headers.
+services:
+  nginx:
+    ports: !override
+      - "127.0.0.1:${PROXY_PORT:-3080}:80"
+    volumes: !override
+      - ./deploy/nginx/host-proxy.conf.template:/etc/nginx/templates/default.conf.template:ro

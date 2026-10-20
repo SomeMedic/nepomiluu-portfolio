@@ -1,0 +1,50 @@
+.scene { position: relative; padding: 3rem var(--gutter) 5rem; color: #54362d; }
+.composition { position: relative; display: grid; padding-top: 3.5rem; }
+.medical,.art { position: relative; min-width: 0; }
+.medical h2,.art h2 { font: italic 600 22vw/1.12 var(--italic); letter-spacing: -.06em; }
+.art { color: #ae573f; }
+.art h2 { font-size: 19vw; }
+.caption { margin-top: 1.75rem; max-width: 24rem; }
+.caption h3 { font: 500 1.5rem/1.2 'Cormorant Garamond',Georgia,serif; letter-spacing: -.02em; text-wrap: balance; }
+.caption p { font-size: 1rem; line-height: 1.65; color: #7a7069; margin-top: .75rem; text-wrap: pretty; }
+.times { width: 36px; height: 36px; margin: 2.75rem auto; color: #ae573f; }
+.times svg { width: 100%; height: 100%; }
+.times path { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.art { justify-self: end; width: 88%; }
+.connection { position: relative; height: 70px; margin-top: 3rem; }
+.connection svg { display: block; width: 100%; height: 100%; }
+.connection path { fill: none; stroke: #b76247; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.result { display: flex; align-items: baseline; gap: 1.5rem; padding-top: 2.25rem; }
+.result > span { flex: none; font-size: .625rem; letter-spacing: .1em; color: #a8624c; }
+.result p { font: 500 clamp(1.8rem, 5vw, 3rem)/1.15 'Cormorant Garamond',Georgia,serif; letter-spacing: -.035em; text-wrap: balance; }
+@media (min-width: 768px) {
+  .scene { min-height: 900px; padding: 2rem 6% 5rem; }
+  .composition { grid-template-columns: 1fr 1fr; gap: 8%; padding-top: 5rem; min-height: 570px; }
+  .medical h2,.art h2 { font-size: clamp(94px, 12vw, 200px); }
+  .art h2 { font-size: clamp(88px, 10.5vw, 180px); }
+  .art { margin-top: 9rem; width: 100%; }
+  .times { position: absolute; left: 47%; top: 45%; margin: 0; width: 44px; height: 44px; }
+  .caption { margin-top: 2rem; padding-left: 1rem; max-width: 26rem; }
+  .caption h3 { font-size: 30px; }
+  .caption p { font-size: 17px; max-width: 22em; }
+  .connection { margin-top: 2rem; height: 70px; }
+  .result { padding-top: 2.5rem; gap: 3rem; }
+  .result > span { font-size: 12px; }
+  .result p { font-size: clamp(36px, 4.2vw, 70px); }
+}
+@media (min-width: 1280px) and (min-height: 801px) {
+  .scene { min-height: 940px; height: var(--scene-height); padding: 24px 6% 48px; display: flex; flex-direction: column; }
+  .composition { flex: 1; min-height: 0; padding-top: 8svh; gap: 10%; }
+  .medical h2 { font-size: min(calc(var(--canvas-width) * .12), 230px); }
+  .art h2 { font-size: min(calc(var(--canvas-width) * .109), 209px); }
+  .art { margin-top: 14svh; }
+  .caption { margin-top: 30px; }
+  .caption h3 { font-size: 34px; }
+  .caption p { font-size: 18px; margin-top: 16px; }
+  .times { top: 35%; left: 47%; width: 52px; height: 52px; }
+  .connection { height: 72px; flex: none; margin-top: 36px; }
+  .result { min-height: 118px; flex: none; padding-top: 36px; }
+}
+@media (min-width: 768px) and (max-height: 800px) {
+  .scene { min-height: 880px; }
+}

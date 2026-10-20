@@ -1,0 +1,24 @@
+server_tokens off;
+server {
+    listen 80;
+    server_name ${DOMAIN};
+    client_max_body_size 21m;
+    add_header X-Content-Type-Options nosniff always;
+    location = /nginx-health { access_log off; return 200 "ok\n"; }
+    location ^~ /api/internal/ { return 404; }
+    location ^~ /api/admin/ { return 503 "CMS requires HTTPS\n"; }
+    location ^~ /admin { return 503 "CMS requires HTTPS\n"; }
+    location /api/ {
+        proxy_pass http://api:4000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_cache off;
+    }
+    location / {
+        proxy_pass http://web:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $remote_addr;
+    }
+}

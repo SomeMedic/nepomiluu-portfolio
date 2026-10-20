@@ -1,0 +1,2 @@
+'use client';
+export default function ErrorPage({reset}:{reset:()=>void}){return <main className="errorPage"><p>uliana.</p><h1>Скоро продолжим.<br/>We’ll be right back.</h1><p>Не удалось загрузить портфолио. Попробуйте ещё раз или напишите Ульяне напрямую.<br/>The portfolio could not be loaded. Please try again or get in touch.</p><button className="button" onClick={reset}>Повторить / Try again</button><a className="textLink" href="https://t.me/nepomiluu">Telegram @nepomiluu</a></main>}

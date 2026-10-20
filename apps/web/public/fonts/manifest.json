@@ -1,0 +1,162 @@
+[
+  {
+    "family": "Cormorant Garamond",
+    "style": "italic",
+    "weight": 600,
+    "subset": "cyrillic-ext",
+    "path": "/fonts/cormorant-garamond-italic-cyrillic-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd5LDf-hdM8Efs.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "italic",
+    "weight": 600,
+    "subset": "cyrillic",
+    "path": "/fonts/cormorant-garamond-italic-cyrillic.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd5LDf-jNM8Efs.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "italic",
+    "weight": 600,
+    "subset": "latin-ext",
+    "path": "/fonts/cormorant-garamond-italic-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd5LDf-htM8Efs.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "italic",
+    "weight": 600,
+    "subset": "latin",
+    "path": "/fonts/cormorant-garamond-italic-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd5LDf-iNM8.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "normal",
+    "weight": 500,
+    "subset": "cyrillic-ext",
+    "path": "/fonts/cormorant-garamond-normal-cyrillic-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpHtKgS4.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "normal",
+    "weight": 500,
+    "subset": "cyrillic",
+    "path": "/fonts/cormorant-garamond-normal-cyrillic.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYrXtKgS4.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "normal",
+    "weight": 500,
+    "subset": "latin-ext",
+    "path": "/fonts/cormorant-garamond-normal-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYp3tKgS4.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "normal",
+    "weight": 500,
+    "subset": "latin",
+    "path": "/fonts/cormorant-garamond-normal-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "normal",
+    "weight": 600,
+    "subset": "cyrillic-ext",
+    "path": "/fonts/cormorant-garamond-normal-cyrillic-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYpHtKgS4.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "normal",
+    "weight": 600,
+    "subset": "cyrillic",
+    "path": "/fonts/cormorant-garamond-normal-cyrillic.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYrXtKgS4.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "normal",
+    "weight": 600,
+    "subset": "latin-ext",
+    "path": "/fonts/cormorant-garamond-normal-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYp3tKgS4.woff2"
+  },
+  {
+    "family": "Cormorant Garamond",
+    "style": "normal",
+    "weight": 600,
+    "subset": "latin",
+    "path": "/fonts/cormorant-garamond-normal-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2"
+  },
+  {
+    "family": "Inter",
+    "style": "normal",
+    "weight": 400,
+    "subset": "cyrillic-ext",
+    "path": "/fonts/inter-normal-cyrillic-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2"
+  },
+  {
+    "family": "Inter",
+    "style": "normal",
+    "weight": 400,
+    "subset": "cyrillic",
+    "path": "/fonts/inter-normal-cyrillic.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2"
+  },
+  {
+    "family": "Inter",
+    "style": "normal",
+    "weight": 400,
+    "subset": "latin-ext",
+    "path": "/fonts/inter-normal-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2"
+  },
+  {
+    "family": "Inter",
+    "style": "normal",
+    "weight": 400,
+    "subset": "latin",
+    "path": "/fonts/inter-normal-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+  },
+  {
+    "family": "Inter",
+    "style": "normal",
+    "weight": 500,
+    "subset": "cyrillic-ext",
+    "path": "/fonts/inter-normal-cyrillic-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2"
+  },
+  {
+    "family": "Inter",
+    "style": "normal",
+    "weight": 500,
+    "subset": "cyrillic",
+    "path": "/fonts/inter-normal-cyrillic.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2"
+  },
+  {
+    "family": "Inter",
+    "style": "normal",
+    "weight": 500,
+    "subset": "latin-ext",
+    "path": "/fonts/inter-normal-latin-ext.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2"
+  },
+  {
+    "family": "Inter",
+    "style": "normal",
+    "weight": 500,
+    "subset": "latin",
+    "path": "/fonts/inter-normal-latin.woff2",
+    "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2"
+  }
+]

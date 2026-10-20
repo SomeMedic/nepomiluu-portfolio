@@ -1,0 +1,88 @@
+{
+  "title": "Утверждённые макеты портфолио Ульяны Непомилуевой",
+  "collected_on": "2026-10-19",
+  "timezone": "Europe/Moscow",
+  "status": "approved-static-designs",
+  "count": 7,
+  "copy_verification": "SHA-256 of every workspace copy matches the approved source",
+  "decisions": "portfolio-decisions.md",
+  "items": [
+    {
+      "number": 1,
+      "title": "Hero — представление",
+      "file": "01-hero.png",
+      "variant": "Утверждённая версия с описанием специалиста",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a15460-f086-7260-b750-22e7e172af85\\exec-3940222d-050c-4ba8-96bc-f03d698a1e67.png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1628243,
+      "sha256": "ef7e791fbbb4c7274a951b36df353d545b8b0193e0f9f3fe011915a7c69b4e54"
+    },
+    {
+      "number": 2,
+      "title": "Clypse — как я думаю",
+      "file": "02-clypse-case.png",
+      "variant": "Визуальный вариант 2",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a15460-f086-7260-b750-22e7e172af85\\exec-343d6e30-1f05-4e1a-8e16-1f7ad276ef07.png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1363528,
+      "sha256": "f8fa77b8734170e67f4be255d3fb80aaeaf22105087a6d34e8dbc5d986a9e9bf"
+    },
+    {
+      "number": 3,
+      "title": "Клиника Фомина — следующая работа",
+      "file": "03-fomina-case.png",
+      "variant": "Визуальный вариант 3",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a15494-b38e-73a1-86e5-a2e015d136c0\\exec-10724e1b-37b4-4deb-abd2-db0d3952c5e3.png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1718099,
+      "sha256": "d6d8d847f4beff4d4aa599c4a5166e2502674fb8f39b967ca3c25ae2b4c71509"
+    },
+    {
+      "number": 4,
+      "title": "Логика × Чувство",
+      "file": "04-logic-and-feeling.png",
+      "variant": "Визуальный вариант 2",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a15494-b38e-73a1-86e5-a2e015d136c0\\exec-4549d556-9b81-4298-8085-61ab88a78fcd.png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1398699,
+      "sha256": "6433adf022d938ddc24303b2fbe0f43377b49bad2c3e85fc8b3bb6d1016088fc"
+    },
+    {
+      "number": 5,
+      "title": "Опыт в разных масштабах",
+      "file": "05-experience.png",
+      "variant": "Визуальный вариант 3, обе правки заливки по кривой",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a15494-b38e-73a1-86e5-a2e015d136c0\\exec-66026d41-56b8-4464-8af0-6af136fc5e59.png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1666103,
+      "sha256": "91b2118c8427abbc9898e0126e41d0fef039e19f9180ee0b266bae97732c831a"
+    },
+    {
+      "number": 6,
+      "title": "Как мы будем работать",
+      "file": "06-how-we-work.png",
+      "variant": "Визуальный вариант 1",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a15494-b38e-73a1-86e5-a2e015d136c0\\exec-a7f26499-a139-4e5a-a74c-d2efb437bf1c.png",
+      "width": 1585,
+      "height": 992,
+      "bytes": 1350264,
+      "sha256": "f0f35afc5d3ea135f68eace16a162165ba5d86a3910fd1b40115bfdcc98c5181"
+    },
+    {
+      "number": 7,
+      "title": "Футер — контакты",
+      "file": "07-footer.png",
+      "variant": "Визуальный вариант 2, добавлен ВКонтакте @unepomilueva",
+      "source": "C:\\Users\\user\\.codex\\generated_images\\01a15494-b38e-73a1-86e5-a2e015d136c0\\exec-0f5d8ede-2a95-4d84-92eb-4cfb867e45e0.png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1442326,
+      "sha256": "8801e35780ae04f742aad1e9e9b4d6d2f49604185f7417ce74b9a93ad28c663c"
+    }
+  ]
+}

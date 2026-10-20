@@ -1,0 +1,9 @@
+[Unit]
+Description=Deploy the portfolio revision verified by GitHub Actions
+Wants=network-online.target docker.service
+After=network-online.target docker.service
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/nepomiluu-poll-deployment
+TimeoutStartSec=2700
+UMask=0077
