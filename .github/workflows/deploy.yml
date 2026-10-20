@@ -45,6 +45,9 @@ jobs:
       url: https://nepomiluu.art
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          # Git must see the previous deploy-ready commit to advance it safely.
+          fetch-depth: 0
       - name: Mark this verified main revision ready for server deployment
         run: git push origin HEAD:refs/heads/deploy-ready
       - name: Wait for the server to finish deployment and HTTPS checks
