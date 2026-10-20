@@ -28,6 +28,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm test
+      - run: node scripts/prepare-social-assets.mjs --check
       - run: node --test scripts/operations.test.mjs scripts/local-runtime.test.mjs
       - run: pnpm build
       - run: pnpm typecheck

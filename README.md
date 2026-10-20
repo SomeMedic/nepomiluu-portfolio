@@ -2,6 +2,8 @@
 
 Production: [nepomiluu.art](https://nepomiluu.art). Автоматический выпуск через GitHub Actions и Compose описан в [production-deployment.md](docs/production-deployment.md).
 
+Метаданные RU/EN, Open Graph, обложки ссылок и их проверка: [seo-and-social.md](docs/seo-and-social.md).
+
 Next.js App Router + Nest + MongoDB, RU/EN, фиксированная главная из семи секций и CMS кейсов. pnpm-монорепозиторий: `apps/web`, `apps/api`, `packages/contracts`. Загруженные изображения хранятся локально в постоянном Docker volume. Аналитика и сторонние трекеры не подключены.
 
 Визуальная основа — [утверждённые макеты](design/README.md), текстовые решения — [portfolio-decisions.md](design/portfolio-decisions.md). Для Clypse и клиники Фомина предоставлены презентационные материалы проектов: они подключены к двуязычным кейсам и главной. Оба стартовых кейса заполнены в seed для публикации; существующие записи CMS seed не перезаписывает. Текущий журнал проверки — [implementation-progress.md](docs/implementation-progress.md).

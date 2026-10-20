@@ -1,0 +1,81 @@
+{
+  "tool": "sharp 0.34.5",
+  "jpeg": {
+    "quality": 92,
+    "chromaSubsampling": "4:4:4",
+    "mozjpeg": true
+  },
+  "geometry": "1200x630. Home artwork resized with at most a subpixel edge crop; case presentation boards fit in full with ivory side margins. No UI content or portraits edited.",
+  "files": [
+    {
+      "source": "assets/originals/social/portfolio-ru-v1.png",
+      "output": "apps/web/public/social/portfolio-ru-v1.jpg",
+      "width": 1200,
+      "height": 630,
+      "format": "jpeg",
+      "bytes": 101004,
+      "sourceSha256": "9833468cd19a446eb66b20cab2d3135d5e93f2a4c43659477b43cc4f59dc6292",
+      "sha256": "95504f0ba07ba8b47808e53b7f25aa6678407a80295a32aec0b1e069141d0d77"
+    },
+    {
+      "source": "assets/originals/social/portfolio-en-v1.png",
+      "output": "apps/web/public/social/portfolio-en-v1.jpg",
+      "width": 1200,
+      "height": 630,
+      "format": "jpeg",
+      "bytes": 98655,
+      "sourceSha256": "506415a4c66c7ea44b1ce0d17732150576b530887c8c2798cc9383f9bf156f90",
+      "sha256": "06550c5fad52ba29a54d7ad00c919516bd05d8b2c919ba824e202a0c69395aa4"
+    },
+    {
+      "source": "design/clypse-portfolio/01-cover.png",
+      "output": "apps/web/public/social/clypse-cover-v1.jpg",
+      "width": 1200,
+      "height": 630,
+      "format": "jpeg",
+      "bytes": 95328,
+      "sourceSha256": "9dcc7c768a888bd5ffd6936644bf0e4033701aeb76161b0b33e92d941972741d",
+      "sha256": "03559b9d02aab0e38425d61c2ed9e24a7d441dff0041677c13ce6fd9d15e66c3"
+    },
+    {
+      "source": "design/fomin-clinic-portolio/01-cover.png",
+      "output": "apps/web/public/social/fomina-cover-v1.jpg",
+      "width": 1200,
+      "height": 630,
+      "format": "jpeg",
+      "bytes": 84618,
+      "sourceSha256": "b5bce256800df0360d3f3ba976523b4eeae10f020b4de4f180621673fc76a57e",
+      "sha256": "71eb5bb266841a9ced7d6eb87a48a584ada6babbda40902f8986d672289ae56c"
+    },
+    {
+      "source": "apps/web/src/app/icon.svg",
+      "output": "apps/web/public/icon-32.png",
+      "width": 32,
+      "height": 32,
+      "format": "png",
+      "bytes": 603,
+      "sourceSha256": "6a2580ee3a595ba4b3db1cf4e76a82a51e4ed142119e8e9dbac450c911423775",
+      "sha256": "5b2873532596dd06f49b485cd112bb4a0fb22aaaca8697a364710dbfa1852778"
+    },
+    {
+      "source": "apps/web/src/app/icon.svg",
+      "output": "apps/web/public/icon-48.png",
+      "width": 48,
+      "height": 48,
+      "format": "png",
+      "bytes": 872,
+      "sourceSha256": "6a2580ee3a595ba4b3db1cf4e76a82a51e4ed142119e8e9dbac450c911423775",
+      "sha256": "4a4339087c3dade729d594033f6e7204fee10697fcba47f22186d71a7c819d5d"
+    },
+    {
+      "source": "apps/web/src/app/icon.svg",
+      "output": "apps/web/public/apple-touch-icon.png",
+      "width": 180,
+      "height": 180,
+      "format": "png",
+      "bytes": 3609,
+      "sourceSha256": "6a2580ee3a595ba4b3db1cf4e76a82a51e4ed142119e8e9dbac450c911423775",
+      "sha256": "4d2d9ba4a9ab1c50b5ebb9a45521c03435b9bb140659f7fefd74f7e5a1bbbb4f"
+    }
+  ]
+}
