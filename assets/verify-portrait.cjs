@@ -10,11 +10,13 @@ async function main() {
     photo('portrait-source.png'), photo('portrait-source-lossless.webp'),
     alpha('portrait-mask-refined.png'), alpha('portrait-mask-refined.webp'),
   ]);
-  const result = { sourcePhotoPixelsEqual: original.equals(lossless), photoBytesCompared: original.length, maskAlphaEqual: pngAlpha.equals(webpAlpha), maskAlphaBytesCompared: pngAlpha.length };
+  const earringHairPoints = [[337, 568], [337, 592], [350, 620], [348, 650]];
+  const earringHairOpaque = earringHairPoints.every(([x, y]) => pngAlpha[y * 960 + x] === 255);
+  const result = { sourcePhotoPixelsEqual: original.equals(lossless), photoBytesCompared: original.length, maskAlphaEqual: pngAlpha.equals(webpAlpha), maskAlphaBytesCompared: pngAlpha.length, earringHairOpaque };
   const output = path.resolve(__dirname, '../output/verification/editorial-refinement/portrait.json');
   await fs.mkdir(path.dirname(output), { recursive: true });
   await fs.writeFile(output, JSON.stringify(result, null, 2));
   console.log(JSON.stringify(result));
-  if (!result.sourcePhotoPixelsEqual || !result.maskAlphaEqual) process.exitCode = 1;
+  if (!result.sourcePhotoPixelsEqual || !result.maskAlphaEqual || !result.earringHairOpaque) process.exitCode = 1;
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });
