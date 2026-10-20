@@ -4,6 +4,30 @@ import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { checkArchiveNames, fileManifest, verifyManifest, verifyReferences } from './operations.mjs';
+import { inventoryBuiltinFiles } from './container/builtin-assets.mjs';
+
+test('backup inventories current project boards from drafts and publications, not a legacy allowlist', async () => {
+  const directory = await mkdtemp(join(tmpdir(), 'portfolio-builtins-'));
+  const pair = { ru: 'Экран', en: 'Screen' };
+  const image = name => ({ mediaId: `builtin:${name}`, alt: pair });
+  const projects = [{ slug: 'case', draft: { cover: image('clypse-cover') }, publishedSnapshot: { blocks: [{ images: [image('fomina-cover'), image('clypse-cover')] }] } }];
+  try {
+    for (const name of ['clypse-cover', 'fomina-cover', 'unreferenced']) await writeFile(join(directory, `${name}.webp`), 'fixture');
+    assert.deepEqual(await inventoryBuiltinFiles(projects, directory), ['builtin:clypse-cover', 'builtin:fomina-cover']);
+    await rm(join(directory, 'fomina-cover.webp'));
+    const builtinFiles = await inventoryBuiltinFiles(projects, directory);
+    assert.deepEqual(builtinFiles, ['builtin:clypse-cover']);
+    const mediaDir = join(directory, 'media');
+    await mkdir(mediaDir);
+    await assert.rejects(verifyReferences({ projects: [{ draft: projects[0].publishedSnapshot }], media: [], homes: [], builtinFiles }, mediaDir), /Missing builtin media: builtin:fomina-cover/);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
+test('builtin inventory rejects paths outside the public asset directory', async () => {
+  for (const mediaId of ['builtin:../secret', 'builtin:/secret', 'builtin:a\\b']) {
+    await assert.rejects(inventoryBuiltinFiles([{ draft: { mediaId } }], tmpdir()), /Unsafe builtin media ID/);
+  }
+});
 
 test('restore rejects traversal, links and duplicate archive entries', () => {
   const base = 'manifest.json\ninventory.json\ndatabase.archive.gz\nmedia/\n';

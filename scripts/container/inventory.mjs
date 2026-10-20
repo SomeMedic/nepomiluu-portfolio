@@ -1,5 +1,5 @@
 import { createRequire } from 'node:module';
-import { access } from 'node:fs/promises';
+import { inventoryBuiltinFiles } from './builtin-assets.mjs';
 const require = createRequire('/app/apps/api/package.json');
 const mongoose = require('mongoose');
 const uri = new URL(process.env.MONGODB_URI);
@@ -23,10 +23,7 @@ try {
     const media = await db.collection('media').find({}, { projection: { _id: 1 } }).sort({ _id: 1 }).toArray();
     const homes = await db.collection('homes').find({}).sort({ _id: 1 }).toArray();
     const ownerCount = await db.collection('owners').countDocuments();
-    const builtinFiles = [];
-    for (const name of ['fomina-home', 'fomina-doctors', 'fomina-service']) {
-      try { await access(`${process.env.PUBLIC_ASSETS_DIR}/${name}.webp`); builtinFiles.push(`builtin:${name}`); } catch { /* Verifier reports a referenced missing asset. */ }
-    }
+    const builtinFiles = await inventoryBuiltinFiles(projects, process.env.PUBLIC_ASSETS_DIR);
     process.stdout.write(JSON.stringify({ database: db.databaseName, ...runtime, projects, media, homes, ownerCount, builtinFiles }));
   }
 } finally { await connection.close(); }
